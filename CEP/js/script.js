@@ -1,20 +1,20 @@
-const button = document.querySelector ('.btn');
-button.addEventListener ('click', adressList);
-button.addEventListener ('click', renderTable);
+const button = document.querySelector ('.btn')
+button.addEventListener ('click', adressSearch)
+button.addEventListener ('click', renderTable)
 
-function adressList () {
+let tabList = JSON.parse(localStorage.getItem("adress"));
+
+function adressSearch () {
     const cep = document.querySelector('#cep').value
     const via = `https://viacep.com.br/ws/${cep}/json/`;
-
 fetch (via)
-.then ((response) => response.json())
-.then ((data) => renderTable(data))
-.catch ((error) => console.log(error));
-
+.then (response => response.json())
+.then (data => renderTable(data))
 }
 
+
 function renderTable (data) {
-    const tableBody = document.querySelector('#result');
+    const tableBody = document.querySelector('#result')
     tableBody.innerHTML = `
     <tr>
         <td>${data.cep}</td>
