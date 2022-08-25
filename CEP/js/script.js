@@ -1,26 +1,25 @@
-const button = document.querySelector ('.btn')
-button.addEventListener ('click', adressSearch)
-button.addEventListener ('click', renderTable)
+let button = document.querySelector ('.btn')
+button.addEventListener('click', adressSearch)
+button.addEventListener('click', renderTable)
 
-let tabList = JSON.parse(localStorage.getItem("adress"));
+let tabList = JSON.parse(localStorage.getItem("adress"))
 
 function adressSearch () {
     const cep = document.querySelector('#cep').value
     const via = `https://viacep.com.br/ws/${cep}/json/`;
 fetch (via)
-.then (response => response.json())
-.then (data => renderTable(data))
+    .then (response => response.json())
+    .then (data => renderTable(data))
+    .catch (error => console.log(error))
 }
-
 
 function renderTable (data) {
     const tableBody = document.querySelector('#result')
-    tableBody.innerHTML = `
-    <tr>
+    let tableRow = `<tr>
         <td>${data.cep}</td>
         <td>${data.logradouro}</td>
         <td>${data.bairro}</td>
         <td>${data.localidade}/${data.uf}</td>
-    </tr>
- `
+    </tr>`;
+ tableBody.innerHTML += tableRow;
 }
