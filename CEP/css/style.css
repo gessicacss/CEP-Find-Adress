@@ -1,0 +1,84 @@
+* {
+    margin:0;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    background-color: rgb(154, 172, 227);
+    padding:1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:15px;
+    z-index:2;
+}
+
+h1 {
+    color:white;
+    font-size:20px;
+}
+
+p {
+    display:flex;
+    align-items: center;
+    color:black;
+}
+
+.form {
+    display:flex;
+}
+
+.searchAdress {
+    border:3px solid rgb(252, 252, 252);
+    border-radius:0.3em ;
+    margin-right:4px;
+}
+
+.adressInput {
+    padding:0.3em
+}
+
+.btn {
+    cursor: pointer;
+    background-color:rgb(85, 85, 247);
+    color:black;
+    border: 1px solid  rgb(37, 37, 37);
+    border-radius: 0.4em;
+    padding:0.4em;
+    width: 35px;
+    align-items: center;
+}
+
+.tableResult {
+    height:100vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+table {
+    width:70%;
+    height:40px;
+    border-collapse: separate;
+    box-shadow: 0px 12px 50px 1px rgb(109, 109, 109);
+}
+
+th {
+    background-color: rgb(154, 186, 244);
+    color:black;
+    padding:5px;
+    text-align: left;
+    font-size:12px;
+}
+
+td {
+    background-color: whitesmoke;
+    padding:5px;
+    text-align: left;
+    font-size:12px;
+}
